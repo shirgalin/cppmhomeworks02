@@ -12,14 +12,12 @@ struct Bank {
 
 
 void edit_Bank(Bank* b, double& balance) {
-    cout << "Введите новый баланс: "; cin >> balance;;
     b->balance;
 }
 
 
 int main() {
     Bank bk;
-    Bank* bk_array = new Bank[3];
     int account_number;
     string name;
     double balance;
@@ -29,10 +27,9 @@ int main() {
     bk.name = name;
     cout << "Введите баланс: "; cin >> balance;
     bk.balance = balance;
+    cout << "Введите новый баланс: "; cin >> balance;
     edit_Bank(&bk, balance);
-    bk_array[0].name = name;
-    bk_array[0].account_number = account_number;
-    bk_array[0].balance = balance;
-    cout << bk_array[0].name << ", " << bk_array[0].account_number << ", " << bk_array[0].balance << endl;
+    bk.balance = balance;
+    cout << bk.name << ", " << bk.account_number << ", " << bk.balance << endl;
     return 0;
 }
